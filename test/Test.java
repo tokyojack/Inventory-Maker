@@ -18,6 +18,7 @@ public class Test extends JavaPlugin implements Listener {
 		Bukkit.getServer().getPluginManager().registerEvents(this, this);
 	}
 
+	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		new Hub().open(event.getPlayer());
 	}
