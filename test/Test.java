@@ -1,11 +1,9 @@
-package me.tokyojack.spigot.airdrop;
+package package;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import com.valeon.core.inventory.InventoryMakerManager;
 
 public class Test extends JavaPlugin implements Listener {
 
