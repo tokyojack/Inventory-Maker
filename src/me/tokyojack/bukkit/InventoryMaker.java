@@ -34,29 +34,60 @@ public abstract class InventoryMaker {
 
     public abstract void buildInventory();
 
-    public void addItem(ItemStack item){
+	/**
+	 * Adds a item to the inventory
+	 *
+	 * @param ItemStack
+	 *            - The item you want to add
+	 */
+    protected void addItem(ItemStack item){
         this.inventory.addItem(item);
     }
 
-    public void addItem(InventoryClick inventoryClick){
+	/**
+	 * Adds a item with a click
+	 *
+	 * @param InventoryClick
+	 *            - Inventory click with an item
+	 */
+    protected void addItem(InventoryClick inventoryClick){
         this.inventory.addItem(inventoryClick.getItem());
         this.inventoryClickList.add(inventoryClick);
     }
 
-    public void setItem(int slot, ItemStack item){
+	/**
+	 * Sets a item to the inventory
+	 *
+	 * @param ItemStack
+	 *            - The item you want to add
+	 */
+    protected void setItem(int slot, ItemStack item){
         this.inventory.setItem(slot, item);
     }
 
-    public void setItem(int slot, InventoryClick inventoryClick){
-        Bukkit.broadcastMessage(inventoryClick.getItem().getType().toString());
+	/**
+	 * Sets a item with a click
+	 *
+	 * @param InventoryClick
+	 *            - Inventory click with an item
+	 */
+    protected void setItem(int slot, InventoryClick inventoryClick){
         this.inventory.setItem(slot, inventoryClick.getItem());
         this.inventoryClickList.add(inventoryClick);
     }
 
+	/**
+	 * Gets the inventories name
+	 *
+	 * @return String - Inventory name
+	 */
     public String getInventoryName(){
         return this.inventory.getName();
     }
 
+	/**
+	 * Open's the inventory for a player
+	 */
     public void open(Player player){
         player.openInventory(this.inventory);
     }
